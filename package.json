@@ -1,9 +1,18 @@
 {
-  "repository": "https://github.com/vercel/examples.git",
+  "name": "get2rest",
+  "displayName": "GET To REST Wrapper",
+  "descriptionEnglish": "Converts HTTP methods to GET for easier API usage on platforms that only support GET.",
+  "author": {
+    "name": "Isnandar Fajar Pangestu",
+    "url": "https://github.com/isnandar1471"
+  },
+  "homepage": "https://github.com/isnandar1471/get2rest",
+  "repository": "https://github.com/isnandar1471/get2rest.git",
   "license": "MIT",
   "private": true,
   "devDependencies": {
     "@types/node": "^17.0.42",
+    "@vercel/config": "^0.2.1",
     "@vercel/node": "^2.9.6",
     "typescript": "^4.7.3"
   }
