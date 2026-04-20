@@ -22,6 +22,15 @@ vercel dev
 curl "http://localhost:3000/api/proxy?url=https://jsonplaceholder.typicode.com/posts/1"
 ```
 
+### Production example
+
+If your app is deployed on Vercel, replace `localhost:3000` with your production domain:
+
+```bash
+curl "https://your-project.vercel.app/api/proxy?url=https://jsonplaceholder.typicode.com/posts/1"
+```
+
+
 ## API Endpoint
 
 ### `GET /api/proxy`
