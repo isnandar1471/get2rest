@@ -60,7 +60,7 @@ Make HTTP requests to any URL using query parameters.
 
 ### 1. Simple GET Request
 ```bash
-curl "http://localhost:3000/api/proxy?url=https://jsonplaceholder.typicode.com/posts/1"
+curl "https://get2rest.vercel.app/api/proxy?url=https://jsonplaceholder.typicode.com/posts/1"
 ```
 
 **Response:**
@@ -80,22 +80,22 @@ curl "http://localhost:3000/api/proxy?url=https://jsonplaceholder.typicode.com/p
 
 ### 2. GET with Query Parameters
 ```bash
-curl "http://localhost:3000/api/proxy?url=https://jsonplaceholder.typicode.com/posts&params={\"_limit\":5}"
+curl "https://get2rest.vercel.app/api/proxy?url=https://jsonplaceholder.typicode.com/posts&params={\"_limit\":5}"
 ```
 
 ### 3. POST Request with Data
 ```bash
-curl "http://localhost:3000/api/proxy?url=https://jsonplaceholder.typicode.com/posts&method=POST&data={\"title\":\"Hello\",\"body\":\"World\",\"userId\":1}"
+curl "https://get2rest.vercel.app/api/proxy?url=https://jsonplaceholder.typicode.com/posts&method=POST&data={\"title\":\"Hello\",\"body\":\"World\",\"userId\":1}"
 ```
 
 ### 4. Request with Custom Headers
 ```bash
-curl "http://localhost:3000/api/proxy?url=https://api.github.com/users/octocat&headers={\"Accept\":\"application/vnd.github.v3+json\"}"
+curl "https://get2rest.vercel.app/api/proxy?url=https://api.github.com/users/octocat&headers={\"Accept\":\"application/vnd.github.v3+json\"}"
 ```
 
 ### 5. Complex Request (POST with headers, data, and params)
 ```bash
-curl "http://localhost:3000/api/proxy?url=https://api.example.com/search&method=POST&data={\"query\":\"typescript\"}&headers={\"Authorization\":\"Bearer token\"}&params={\"limit\":10}"
+curl "https://get2rest.vercel.app/api/proxy?url=https://api.example.com/search&method=POST&data={\"query\":\"typescript\"}&headers={\"Authorization\":\"Bearer token\"}&params={\"limit\":10}"
 ```
 
 ---
@@ -124,17 +124,17 @@ All JSON parameters must be valid JSON strings:
 When using special characters, ensure proper URL encoding:
 ```bash
 # With proper URL encoding
-curl "http://localhost/api/proxy?url=https://api.example.com&headers={\"Authorization\":\"Bearer%20token\"}"
+curl "https://get2rest.vercel.app/api/proxy?url=https://api.example.com&headers={\"Authorization\":\"Bearer%20token\"}"
 ```
 
 ### 3. Timeout Configuration
 Adjust timeout based on target API responsiveness:
 ```bash
 # Fast API: 5 second timeout
-curl "http://localhost:3000/api/proxy?url=https://fast-api.com&timeout=5000"
+curl "https://get2rest.vercel.app/api/proxy?url=https://fast-api.com&timeout=5000"
 
 # Slow API: 60 second timeout
-curl "http://localhost:3000/api/proxy?url=https://slow-api.com&timeout=60000"
+curl "https://get2rest.vercel.app/api/proxy?url=https://slow-api.com&timeout=60000"
 ```
 
 ### 4. Error Handling

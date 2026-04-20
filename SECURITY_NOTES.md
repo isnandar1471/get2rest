@@ -13,7 +13,7 @@ When you call the proxy with a self-referencing URL:
 
 ```bash
 # Request 1 (your client)
-curl "http://localhost:3000/api/proxy?url=http://localhost:3000/api/proxy?url=https://api.example.com"
+curl "https://get2rest.vercel.app/api/proxy?url=https://get2rest.vercel.app/api/proxy?url=https://api.example.com"
 ```
 
 This creates a **2-level chain**:
@@ -21,9 +21,9 @@ This creates a **2-level chain**:
 ```
 User Client
   ↓
-Request 1: /api/proxy?url=http://localhost:3000/api/proxy?url=https://api.example.com
+Request 1: /api/proxy?url=https://get2rest.vercel.app/api/proxy?url=https://api.example.com
   ↓
-Server makes HTTP fetch to: http://localhost:3000/api/proxy?url=https://api.example.com
+Server makes HTTP fetch to: https://get2rest.vercel.app/api/proxy?url=https://api.example.com
   ↓
 Request 2 handled independently: /api/proxy?url=https://api.example.com
   ↓
@@ -52,7 +52,7 @@ External API responds
 
 ```bash
 # This is SAFE
-curl "localhost:3000/api/proxy?url=http://localhost:3000/api/proxy?url=https://jsonplaceholder.typicode.com/posts/1"
+curl "https://get2rest.vercel.app/api/proxy?url=https://get2rest.vercel.app/api/proxy?url=https://jsonplaceholder.typicode.com/posts/1"
 
 # Flow:
 # 1. First /api/proxy call receives URL parameter pointing to another /api/proxy call
@@ -78,7 +78,7 @@ curl "localhost:3000/api/proxy?url=http://localhost:3000/api/proxy?url=https://j
 
 ```bash
 # 3-level recursion (not recommended)
-curl "localhost:3000/api/proxy?url=http://localhost:3000/api/proxy?url=http://localhost:3000/api/proxy?url=https://api.example.com"
+curl "get2rest.vercel.app/api/proxy?url=https://get2rest.vercel.app/api/proxy?url=https://get2rest.vercel.app/api/proxy?url=https://api.example.com"
 ```
 
 **Why not recommended:**
@@ -100,7 +100,7 @@ curl "localhost:3000/api/proxy?url=http://localhost:3000/api/proxy?url=http://lo
 
 ```bash
 # This looks infinite but it's NOT
-curl "localhost:3000/api/proxy?url=http://localhost:3000/api/proxy?url=http://localhost:3000/api/proxy?url=..."
+curl "get2rest.vercel.app/api/proxy?url=https://get2rest.vercel.app/api/proxy?url=https://get2rest.vercel.app/api/proxy?url=..."
 ```
 
 **Why it won't create infinite loop:**
@@ -113,7 +113,7 @@ curl "localhost:3000/api/proxy?url=http://localhost:3000/api/proxy?url=http://lo
 
 ```bash
 # This will time out after 30s (but won't crash)
-curl "localhost:3000/api/proxy?url=http://localhost:3000/api/proxy?url=http://localhost:3000/api/proxy?url=..."
+curl "get2rest.vercel.app/api/proxy?url=https://get2rest.vercel.app/api/proxy?url=https://get2rest.vercel.app/api/proxy?url=..."
 # After 30 seconds:
 # {
 #   "success": false,

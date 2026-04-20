@@ -4,25 +4,7 @@ A simple Vercel proxy that lets you send HTTP requests using only GET query para
 
 ## Quick Start
 
-### Installation
-
-```bash
-npm install
-```
-
-### Run locally
-
-```bash
-vercel dev
-```
-
-### First request
-
-```bash
-curl "http://localhost:3000/api/proxy?url=https://jsonplaceholder.typicode.com/posts/1"
-```
-
-### Production example
+### Ready to use example (production example)
 
 Use the deployed production URL:
 
@@ -30,6 +12,11 @@ Use the deployed production URL:
 curl "https://get2rest.vercel.app/api/proxy?url=https://jsonplaceholder.typicode.com/posts/1"
 ```
 
+### Development example
+
+```bash
+curl "http://localhost:3000/api/proxy?url=https://jsonplaceholder.typicode.com/posts/1"
+```
 
 ## API Endpoint
 
@@ -61,25 +48,25 @@ Response example:
 GET request:
 
 ```bash
-curl "http://localhost:3000/api/proxy?url=https://api.github.com/users/octocat"
+curl "https://get2rest.vercel.app/api/proxy?url=https://api.github.com/users/octocat"
 ```
 
 POST request:
 
 ```bash
-curl "http://localhost:3000/api/proxy?url=https://jsonplaceholder.typicode.com/posts&method=POST&data={\"title\":\"Hello\",\"userId\":1}"
+curl "https://get2rest.vercel.app/api/proxy?url=https://jsonplaceholder.typicode.com/posts&method=POST&data={\"title\":\"Hello\",\"userId\":1}"
 ```
 
 With query parameters:
 
 ```bash
-curl "http://localhost:3000/api/proxy?url=https://jsonplaceholder.typicode.com/posts&params={\"_limit\":10}"
+curl "https://get2rest.vercel.app/api/proxy?url=https://jsonplaceholder.typicode.com/posts&params={\"_limit\":10}"
 ```
 
 With headers:
 
 ```bash
-curl "http://localhost:3000/api/proxy?url=https://api.example.com&headers={\"Authorization\":\"Bearer token\"}"
+curl "https://get2rest.vercel.app/api/proxy?url=https://api.example.com&headers={\"Authorization\":\"Bearer token\"}"
 ```
 
 ## Project structure
