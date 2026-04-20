@@ -24,10 +24,10 @@ curl "http://localhost:3000/api/proxy?url=https://jsonplaceholder.typicode.com/p
 
 ### Production example
 
-If your app is deployed on Vercel, replace `localhost:3000` with your production domain:
+Use the deployed production URL:
 
 ```bash
-curl "https://your-project.vercel.app/api/proxy?url=https://jsonplaceholder.typicode.com/posts/1"
+curl "https://get2rest.vercel.app/api/proxy?url=https://jsonplaceholder.typicode.com/posts/1"
 ```
 
 
